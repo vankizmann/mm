@@ -112,8 +112,9 @@ class Type {
 	 * @return string The simplified MIME type string.
 	 */
 	public static function simplify($mimeType, $properties = false, $experimental = false) {
+
 		if (!$experimental) {
-			$mimeType = str_replace('x-', null, $mimeType);
+			$mimeType = str_replace('x-', '', $mimeType);
 		}
 
 		if (!$properties) {
